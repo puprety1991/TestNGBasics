@@ -19,7 +19,7 @@ public class ExamplesAssertion {
 //    close the browser
 
     WebDriver driver;
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void launchTheWebsite(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -28,7 +28,7 @@ public class ExamplesAssertion {
         driver.manage().window().maximize();
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void LoginBtnIsDisplyed(){
 
         //        login btn
@@ -52,7 +52,7 @@ public class ExamplesAssertion {
         System.out.println("i am a test2");
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
         driver.quit();
     }

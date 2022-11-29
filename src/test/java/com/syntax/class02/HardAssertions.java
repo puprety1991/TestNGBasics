@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class HardAssertions {
     public static WebDriver driver;
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void launchTheWebSite(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -22,7 +22,7 @@ public class HardAssertions {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
-    @Test
+    @Test(groups = "regression")
     public void invalidCredentials(){
         WebElement userName = driver.findElement(By.xpath("//input[@id='txtUsername']"));
         userName.sendKeys("admin");
@@ -43,7 +43,7 @@ public class HardAssertions {
         Assert.assertTrue(displayed);
 
     }
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
         driver.quit();
     }
