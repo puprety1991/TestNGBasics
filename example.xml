@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="/Users/puskaruprety/eclipse-workspace/TestNGBasics/src/test/java/com/syntax/class02/ExamplesAssertion.java">
+        <classes>
+            <class name="com.syntax.class02.ExamplesAssertion">
+                <methods>
+                    <include name="LoginBtnIsDisplyed"/>
+                    <include name="testing"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
